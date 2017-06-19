@@ -1,7 +1,7 @@
 ---
 title: caffe框架的搭建和使用
 date: 2017-02-24 19:40:16
-tags: caffe dl CNN
+tags: caffe
 ---
 ## 简介 ##
 直到现在才对学习的caffe框架进行总结，东西比较多。
@@ -26,7 +26,7 @@ caffe已经被扩展到了Windows和Linux底下，两种方式我都有尝试，
 注：如果只用CPU编译，可以跳过此部分。
 #### <font color=blue>方式一</font> ####
 左上角（`win`键）-> 附加驱动（additional drivers）
-![additional_drivers_option](./md_pic/additional_drivers_option.png "additional_drivers_option")
+![additional_drivers_option](/md_pic/additional_drivers_option.png "additional_drivers_option")
 然后就能看到驱动了。
 #### <font color=blue>方式二</font> ####
  进入[http://www.geforce.cn/drivers](http://www.geforce.cn/drivers/ "drivers") ，选择合适的驱动下载。
@@ -214,7 +214,7 @@ CUDA是NVIDIA的编程语言平台，想使用GPU就必须要使用cuda。
 	
 结果
 
-![mnist_result](./md_pic/mnist_result.png  "mnist_result")
+![mnist_result](/md_pic/mnist_result.png  "mnist_result")
 	
 其中`accracy = 0.9956`就是测试集的正确率。
 
@@ -225,15 +225,15 @@ CUDA是NVIDIA的编程语言平台，想使用GPU就必须要使用cuda。
 #### <font color=blue>选定图片</font> ####
 例如我得到很多叶子的形状，都放入`images`底下
 
-![leaf](./md_pic/leaf.png  "leaf")
+![leaf](/md_pic/leaf.png  "leaf")
 
 #### <font color=blue>生成文件路径txt</font> ####
 接下来编辑一个`txt`文件指明文件夹中的图片名称及其对应的`label`。
 
-![txt](./md_pic/txt.png  "txt")
+![txt](/md_pic/txt.png  "txt")
 
 注意`label`一定需要数字，且要和文件路径之间有一个空格，文件结尾不要多出一个行，第一个`/`可以不需要，因为是和根目录联合写成绝对路径的，在之后的使用当中就能理解。
-注：生成这个`txt`文件可以通过任何语言，比较推荐的时BASH脚本的形式，真的很方便。另外我自己编写的C语言脚本是`filetxt.c`，可以自己进行修改。
+注：生成这个`txt`文件可以通过任何语言，比较推荐的时BASH脚本的形式，真的很方便。另外我自己编写的C语言脚本是[filetxt.c](/attachment/filetxt.c )，可以自己进行修改。
 
 
 #### <font color=blue>使用convert_imageset生成图片DB格式文件</font> ####

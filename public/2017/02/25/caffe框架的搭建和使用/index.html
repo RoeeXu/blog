@@ -9,21 +9,21 @@
   <title>caffe框架的搭建和使用 | Above</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="简介直到现在才对学习的caffe框架进行总结，东西比较多。caffe已经被扩展到了Windows和Linux底下，两种方式我都有尝试，里面的坎坷还不是一般的多，简单来讲并不好上手，个人建议了解为主，以后有针对性地使用。优点：数据转化为DB格式，处理起来的速度是及其快的；缺点：全程C代码编写，不对框架十分了解的话会出现很多小毛病。刚刚年前caffe框架更新，导致我编写的层在编译的时候都报错了。郁闷！">
-<meta name="keywords" content="caffe dl CNN">
+<meta name="keywords" content="caffe">
 <meta property="og:type" content="article">
 <meta property="og:title" content="caffe框架的搭建和使用">
 <meta property="og:url" content="http://roeexu.com/2017/02/25/caffe框架的搭建和使用/index.html">
 <meta property="og:site_name" content="Above">
 <meta property="og:description" content="简介直到现在才对学习的caffe框架进行总结，东西比较多。caffe已经被扩展到了Windows和Linux底下，两种方式我都有尝试，里面的坎坷还不是一般的多，简单来讲并不好上手，个人建议了解为主，以后有针对性地使用。优点：数据转化为DB格式，处理起来的速度是及其快的；缺点：全程C代码编写，不对框架十分了解的话会出现很多小毛病。刚刚年前caffe框架更新，导致我编写的层在编译的时候都报错了。郁闷！">
-<meta property="og:image" content="http://roeexu.com/2017/02/25/caffe框架的搭建和使用/md_pic/additional_drivers_option.png">
-<meta property="og:image" content="http://roeexu.com/2017/02/25/caffe框架的搭建和使用/md_pic/mnist_result.png">
-<meta property="og:image" content="http://roeexu.com/2017/02/25/caffe框架的搭建和使用/md_pic/leaf.png">
-<meta property="og:image" content="http://roeexu.com/2017/02/25/caffe框架的搭建和使用/md_pic/txt.png">
-<meta property="og:updated_time" content="2017-06-19T11:37:16.329Z">
+<meta property="og:image" content="http://roeexu.com/md_pic/additional_drivers_option.png">
+<meta property="og:image" content="http://roeexu.com/md_pic/mnist_result.png">
+<meta property="og:image" content="http://roeexu.com/md_pic/leaf.png">
+<meta property="og:image" content="http://roeexu.com/md_pic/txt.png">
+<meta property="og:updated_time" content="2017-06-19T13:05:53.075Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="caffe框架的搭建和使用">
 <meta name="twitter:description" content="简介直到现在才对学习的caffe框架进行总结，东西比较多。caffe已经被扩展到了Windows和Linux底下，两种方式我都有尝试，里面的坎坷还不是一般的多，简单来讲并不好上手，个人建议了解为主，以后有针对性地使用。优点：数据转化为DB格式，处理起来的速度是及其快的；缺点：全程C代码编写，不对框架十分了解的话会出现很多小毛病。刚刚年前caffe框架更新，导致我编写的层在编译的时候都报错了。郁闷！">
-<meta name="twitter:image" content="http://roeexu.com/2017/02/25/caffe框架的搭建和使用/md_pic/additional_drivers_option.png">
+<meta name="twitter:image" content="http://roeexu.com/md_pic/additional_drivers_option.png">
   
   
     <link rel="icon" href="/favicon.png">
@@ -50,7 +50,9 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="img/avatar.jpg" class="js-avatar">
+			
+        	<img src="/img/avatar.jpg" class="js-avatar show" style="width: 100%;height: 100%;opacity: 1;">
+        	
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">Roee Xu</a></h1>
@@ -102,7 +104,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="img/avatar.jpg" class="js-avatar">
+				<img src="/img/avatar.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">Roee Xu</h1>
@@ -171,7 +173,7 @@ sudo apt-get install --no-install-recommends libboost-all-dev
 sudo apt-get install libopenblas-dev liblapack-dev libatlas-base-dev
 sudo apt-get install libgflags-dev libgoogle-glog-dev liblmdb-dev
 </code></pre><h3 id="安装显卡驱动"><a href="#安装显卡驱动" class="headerlink" title="安装显卡驱动"></a><font color="red">安装显卡驱动</font></h3><p>注：如果只用CPU编译，可以跳过此部分。</p>
-<h4 id="方式一"><a href="#方式一" class="headerlink" title="方式一"></a><font color="blue">方式一</font></h4><p>左上角（<code>win</code>键）-&gt; 附加驱动（additional drivers）<br><img src="./md_pic/additional_drivers_option.png" alt="additional_drivers_option" title="additional_drivers_option"><br>然后就能看到驱动了。</p>
+<h4 id="方式一"><a href="#方式一" class="headerlink" title="方式一"></a><font color="blue">方式一</font></h4><p>左上角（<code>win</code>键）-&gt; 附加驱动（additional drivers）<br><img src="/md_pic/additional_drivers_option.png" alt="additional_drivers_option" title="additional_drivers_option"><br>然后就能看到驱动了。</p>
 <h4 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a><font color="blue">方式二</font></h4><p> 进入<a href="http://www.geforce.cn/drivers/" title="drivers" target="_blank" rel="external">http://www.geforce.cn/drivers</a> ，选择合适的驱动下载。<br> 下载得到的文件是<code>.run</code>文件。<br> 卸载已经存在的驱动版本</p>
 <pre><code>sudo apt-get remove --purge nvidia*
 </code></pre><p> <code>Ctrl+Alt+F1</code>切换到tty1控制台后，输入</p>
@@ -275,14 +277,14 @@ LIBRARIES += glog gflags protobuf boost_system boost_filesystem m hdf5_serial_hl
 </code></pre><p>用最lenet训练mnist数据集</p>
 <pre><code>sh examples/mnist/train_lenet.sh
 </code></pre><p>结果</p>
-<p><img src="./md_pic/mnist_result.png" alt="mnist_result" title="mnist_result"></p>
+<p><img src="/md_pic/mnist_result.png" alt="mnist_result" title="mnist_result"></p>
 <p>其中<code>accracy = 0.9956</code>就是测试集的正确率。</p>
 <h3 id="训练自己的图片"><a href="#训练自己的图片" class="headerlink" title="训练自己的图片"></a><font color="red">训练自己的图片</font></h3><p>就是现在自己手头上有很多图片，想通过训练得到模型，并进行测试。<br>那么将你所有的图片（需要都有<code>label</code>）放到一起，交叉验证什么的方式等看完下文自己类比就行。</p>
 <h4 id="选定图片"><a href="#选定图片" class="headerlink" title="选定图片"></a><font color="blue">选定图片</font></h4><p>例如我得到很多叶子的形状，都放入<code>images</code>底下</p>
-<p><img src="./md_pic/leaf.png" alt="leaf" title="leaf"></p>
+<p><img src="/md_pic/leaf.png" alt="leaf" title="leaf"></p>
 <h4 id="生成文件路径txt"><a href="#生成文件路径txt" class="headerlink" title="生成文件路径txt"></a><font color="blue">生成文件路径txt</font></h4><p>接下来编辑一个<code>txt</code>文件指明文件夹中的图片名称及其对应的<code>label</code>。</p>
-<p><img src="./md_pic/txt.png" alt="txt" title="txt"></p>
-<p>注意<code>label</code>一定需要数字，且要和文件路径之间有一个空格，文件结尾不要多出一个行，第一个<code>/</code>可以不需要，因为是和根目录联合写成绝对路径的，在之后的使用当中就能理解。<br>注：生成这个<code>txt</code>文件可以通过任何语言，比较推荐的时BASH脚本的形式，真的很方便。另外我自己编写的C语言脚本是<code>filetxt.c</code>，可以自己进行修改。</p>
+<p><img src="/md_pic/txt.png" alt="txt" title="txt"></p>
+<p>注意<code>label</code>一定需要数字，且要和文件路径之间有一个空格，文件结尾不要多出一个行，第一个<code>/</code>可以不需要，因为是和根目录联合写成绝对路径的，在之后的使用当中就能理解。<br>注：生成这个<code>txt</code>文件可以通过任何语言，比较推荐的时BASH脚本的形式，真的很方便。另外我自己编写的C语言脚本是<a href="/attachment/filetxt.c">filetxt.c</a>，可以自己进行修改。</p>
 <h4 id="使用convert-imageset生成图片DB格式文件"><a href="#使用convert-imageset生成图片DB格式文件" class="headerlink" title="使用convert_imageset生成图片DB格式文件"></a><font color="blue">使用convert_imageset生成图片DB格式文件</font></h4><pre><code>./build/tools/convert_imageset --shuffle --gray ~/Desktop ~/Desktop/TEST.txt ~/Desktop/x
 </code></pre><p>这段的意思是</p>
 <pre><code>convert_imageset工具的路径  选项打乱  选项灰度模式  文件路径  txt文件路径  生成DB数据的文件夹
@@ -336,7 +338,7 @@ Acer_Rubrum
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">caffe dl CNN</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">caffe</a>
         		</li>
       		
 		</ul>
@@ -506,7 +508,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">caffe dl CNN</a>
+                <a href="javascript:void(0)" class="js-tag color1">caffe</a>
               </li>
             
             <div class="clearfix"></div>
