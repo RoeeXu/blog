@@ -6,17 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://roeexu.com">
-  <title>Tag: caffe | Above</title>
+  <title>kaggle-br-coins数据的处理 | Above</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="I love the blue sky!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Above">
-<meta property="og:url" content="http://roeexu.com/tags/caffe/index.html">
+  <meta name="description" content="简介数据集是同学在kaggle上找到的，网址：https://www.kaggle.com/lgmoneda/br-coins，感觉很有意思，就拿来做实验。实验数据是一系列若干枚硬币图片，分别在5～175巴西币不等。具体可以看网址上的介绍。实验数据是非常一般的，没有用高清摄像头，也不是为了拍清楚而拍，有的很模糊，有的有手指在里面，总之非常“一般”。这也挺让人觉得现实，我的目的就是尝试去用我现在所学">
+<meta name="keywords" content="cnn">
+<meta property="og:type" content="article">
+<meta property="og:title" content="kaggle-br-coins数据的处理">
+<meta property="og:url" content="http://roeexu.com/2017/06/20/kaggle-br-coins数据的处理/index.html">
 <meta property="og:site_name" content="Above">
-<meta property="og:description" content="I love the blue sky!">
+<meta property="og:description" content="简介数据集是同学在kaggle上找到的，网址：https://www.kaggle.com/lgmoneda/br-coins，感觉很有意思，就拿来做实验。实验数据是一系列若干枚硬币图片，分别在5～175巴西币不等。具体可以看网址上的介绍。实验数据是非常一般的，没有用高清摄像头，也不是为了拍清楚而拍，有的很模糊，有的有手指在里面，总之非常“一般”。这也挺让人觉得现实，我的目的就是尝试去用我现在所学">
+<meta property="og:image" content="http://roeexu.com/md_pic/100_1477281732.jpg">
+<meta property="og:image" content="http://roeexu.com/md_pic/145_1479427608.jpg">
+<meta property="og:image" content="http://roeexu.com/md_pic/175_1479423462.jpg">
+<meta property="og:image" content="http://roeexu.com/md_pic/5_1477145436.jpg">
+<meta property="og:image" content="http://roeexu.com/md_pic/5_1477145544.jpg">
+<meta property="og:updated_time" content="2017-06-21T13:42:27.224Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Above">
-<meta name="twitter:description" content="I love the blue sky!">
+<meta name="twitter:title" content="kaggle-br-coins数据的处理">
+<meta name="twitter:description" content="简介数据集是同学在kaggle上找到的，网址：https://www.kaggle.com/lgmoneda/br-coins，感觉很有意思，就拿来做实验。实验数据是一系列若干枚硬币图片，分别在5～175巴西币不等。具体可以看网址上的介绍。实验数据是非常一般的，没有用高清摄像头，也不是为了拍清楚而拍，有的很模糊，有的有手指在里面，总之非常“一般”。这也挺让人觉得现实，我的目的就是尝试去用我现在所学">
+<meta name="twitter:image" content="http://roeexu.com/md_pic/100_1477281732.jpg">
   
   
     <link rel="icon" href="/favicon.png">
@@ -138,60 +146,322 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-kaggle-br-coins数据的处理" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/25/caffe框架的搭建和使用/" class="archive-article-date">
-  	<time datetime="2017-02-24T19:40:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-24</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/25/caffe框架的搭建和使用/">caffe框架的搭建和使用</a>
+    <h1 class="article-title" itemprop="name">
+      kaggle-br-coins数据的处理
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/06/20/kaggle-br-coins数据的处理/" class="archive-article-date">
+  	<time datetime="2017-06-20T10:30:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>数据集是同学在kaggle上找到的，网址：<a href="https://www.kaggle.com/lgmoneda/br-coins" target="_blank" rel="external">https://www.kaggle.com/lgmoneda/br-coins</a>，感觉很有意思，就拿来做实验。<br>实验数据是一系列若干枚硬币图片，分别在5～175巴西币不等。具体可以看网址上的介绍。<br>实验数据是非常一般的，没有用高清摄像头，也不是为了拍清楚而拍，有的很模糊，有的有手指在里面，总之非常“一般”。这也挺让人觉得现实，我的目的就是尝试去用我现在所学的知识去“数硬币”。</p>
+<a id="more"></a>
+<p>##实验数据的划分##</p>
+<p>共有三个文件夹，分别是<code>classification_dataset</code>、<code>regression_dataset</code>、<code>regression_sample</code>。<br>其中<code>classification_dataset</code>里面有共3059张图片，全都是照片中只有一枚硬币的图片。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">BRL</th>
+<th style="text-align:center">Num</th>
+<th style="text-align:center">BRL</th>
+<th style="text-align:center">Num</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">600</td>
+<td style="text-align:center">50</td>
+<td style="text-align:center">642</td>
+</tr>
+<tr>
+<td style="text-align:center">10</td>
+<td style="text-align:center">603</td>
+<td style="text-align:center">100</td>
+<td style="text-align:center">609</td>
+</tr>
+<tr>
+<td style="text-align:center">25</td>
+<td style="text-align:center">605</td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<p><img src="/md_pic/100_1477281732.jpg" alt="100_1477281732" title="100_1477281732"></p>
+<p><code>regression_dataset</code>里面有共6028张图片，照片中有若干枚硬币。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">BRL</th>
+<th style="text-align:center">Num</th>
+<th style="text-align:center">BRL</th>
+<th style="text-align:center">Num</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">600</td>
+<td style="text-align:center">115</td>
+<td style="text-align:center">151</td>
+</tr>
+<tr>
+<td style="text-align:center">10</td>
+<td style="text-align:center">663</td>
+<td style="text-align:center">120</td>
+<td style="text-align:center">92</td>
+</tr>
+<tr>
+<td style="text-align:center">15</td>
+<td style="text-align:center">60</td>
+<td style="text-align:center">125</td>
+<td style="text-align:center">61</td>
+</tr>
+<tr>
+<td style="text-align:center">20</td>
+<td style="text-align:center">60</td>
+<td style="text-align:center">130</td>
+<td style="text-align:center">92</td>
+</tr>
+<tr>
+<td style="text-align:center">25</td>
+<td style="text-align:center">665</td>
+<td style="text-align:center">135</td>
+<td style="text-align:center">61</td>
+</tr>
+<tr>
+<td style="text-align:center">50</td>
+<td style="text-align:center">642</td>
+<td style="text-align:center">140</td>
+<td style="text-align:center">60</td>
+</tr>
+<tr>
+<td style="text-align:center">55</td>
+<td style="text-align:center">180</td>
+<td style="text-align:center">145</td>
+<td style="text-align:center">90</td>
+</tr>
+<tr>
+<td style="text-align:center">100</td>
+<td style="text-align:center">816</td>
+<td style="text-align:center">150</td>
+<td style="text-align:center">180</td>
+</tr>
+<tr>
+<td style="text-align:center">105</td>
+<td style="text-align:center">122</td>
+<td style="text-align:center">170</td>
+<td style="text-align:center">30</td>
+</tr>
+<tr>
+<td style="text-align:center">110</td>
+<td style="text-align:center">92</td>
+<td style="text-align:center">175</td>
+<td style="text-align:center">39</td>
+</tr>
+</tbody>
+</table>
+<p><img src="/md_pic/145_1479427608.jpg" alt="145_1479427608" title="145_1479427608"></p>
+<p><code>regression_sample</code>里面有共968张图片，照片中有若干枚硬币。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">BRL</th>
+<th style="text-align:center">Num</th>
+<th style="text-align:center">BRL</th>
+<th style="text-align:center">Num</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">88</td>
+<td style="text-align:center">115</td>
+<td style="text-align:center">11</td>
+</tr>
+<tr>
+<td style="text-align:center">10</td>
+<td style="text-align:center">286</td>
+<td style="text-align:center">120</td>
+<td style="text-align:center">11</td>
+</tr>
+<tr>
+<td style="text-align:center">15</td>
+<td style="text-align:center">60</td>
+<td style="text-align:center">125</td>
+<td style="text-align:center">61</td>
+</tr>
+<tr>
+<td style="text-align:center">20</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">130</td>
+<td style="text-align:center">11</td>
+</tr>
+<tr>
+<td style="text-align:center">25</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">135</td>
+<td style="text-align:center">11</td>
+</tr>
+<tr>
+<td style="text-align:center">50</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">140</td>
+<td style="text-align:center">17</td>
+</tr>
+<tr>
+<td style="text-align:center">55</td>
+<td style="text-align:center">22</td>
+<td style="text-align:center">145</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">100</td>
+<td style="text-align:center">94</td>
+<td style="text-align:center">150</td>
+<td style="text-align:center">44</td>
+</tr>
+<tr>
+<td style="text-align:center">105</td>
+<td style="text-align:center">11</td>
+<td style="text-align:center">170</td>
+<td style="text-align:center">19</td>
+</tr>
+<tr>
+<td style="text-align:center">110</td>
+<td style="text-align:center">11</td>
+<td style="text-align:center">175</td>
+<td style="text-align:center">39</td>
+</tr>
+</tbody>
+</table>
+<p><img src="/md_pic/175_1479423462.jpg" alt="175_1479423462" title="175_1479423462"></p>
+<p>##对处理数据的思考##</p>
+<p>这些硬币都是随意摆放的，甚至有非常黑的，还有大手在图片当中的。</p>
+<p><img src="/md_pic/5_1477145436.jpg" alt="5_1477145436" title="5_1477145436"><br><img src="/md_pic/5_1477145544.jpg" alt="5_1477145544" title="5_1477145544"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">caffe</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">cnn</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://roeexu.com/2017/06/20/kaggle-br-coins数据的处理/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2017/06/22/ubuntu远程连接服务器可视化界面/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          ubuntu远程连接服务器可视化界面
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2017/02/25/caffe框架的搭建和使用/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">caffe框架的搭建和使用</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+  
+  
   
 
-    
+  
+
+  
 
 
           </div>
@@ -214,9 +484,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
