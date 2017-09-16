@@ -20,7 +20,7 @@
 <meta property="og:image" content="http://roeexu.com/md_pic/175_1479423462.jpg">
 <meta property="og:image" content="http://roeexu.com/md_pic/5_1477145436.jpg">
 <meta property="og:image" content="http://roeexu.com/md_pic/5_1477145544.jpg">
-<meta property="og:updated_time" content="2017-06-21T13:42:27.224Z">
+<meta property="og:updated_time" content="2017-06-22T02:17:05.895Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="kaggle-br-coins数据的处理">
 <meta name="twitter:description" content="简介数据集是同学在kaggle上找到的，网址：https://www.kaggle.com/lgmoneda/br-coins，感觉很有意思，就拿来做实验。实验数据是一系列若干枚硬币图片，分别在5～175巴西币不等。具体可以看网址上的介绍。实验数据是非常一般的，没有用高清摄像头，也不是为了拍清楚而拍，有的很模糊，有的有手指在里面，总之非常“一般”。这也挺让人觉得现实，我的目的就是尝试去用我现在所学">
@@ -349,8 +349,9 @@
 </table>
 <p><img src="/md_pic/175_1479423462.jpg" alt="175_1479423462" title="175_1479423462"></p>
 <p>##对处理数据的思考##</p>
-<p>这些硬币都是随意摆放的，甚至有非常黑的，还有大手在图片当中的。</p>
+<p>这些硬币都是随意摆放的，有非常暗的，还有大手在图片当中的。</p>
 <p><img src="/md_pic/5_1477145436.jpg" alt="5_1477145436" title="5_1477145436"><br><img src="/md_pic/5_1477145544.jpg" alt="5_1477145544" title="5_1477145544"></p>
+<p>这些图片直接放进CNN的网络中，我相信没有一个网络能很好的区分这些图片，因为相比较硬币的样子特征，它的位置特征和光线特征更加显著并且有区分度。不得不说现在的图片，直接用CNN分类</p>
 
       
 
@@ -553,11 +554,19 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">cnn</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">rnn</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">caffe</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">cnn</a>
+                <a href="javascript:void(0)" class="js-tag color3">sublime</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -613,15 +622,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="https://www.ustchjy.win/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
+              <a href="http://www.ustchjy.win/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
             </li>
           
             <li class="search-li">
-              <a href="https://ltf123.github.io/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
+              <a href="http://ltf123.github.io/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
             </li>
           
             <li class="search-li">
-              <a href="https://www.ustc.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
+              <a href="http://www.ustc.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
             </li>
           
             <li class="search-li">
